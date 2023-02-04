@@ -15,8 +15,8 @@
 
 ### Recommend Inputs
 
-| Name | Description | Type |
-|------|-------------|------|
+| Name | Description | Type | Default |
+|------|-------------|------|---------|
 | peer\_project\_id | GCP Project ID for peer of the peering connection | `string` | `var.project_id` | 
 | our\_network\_name | Name of the network on our side of the peering connection | `string` | "default" |
 
