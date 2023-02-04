@@ -11,14 +11,14 @@
 | Name | Description | Type |
 |------|-------------|------|
 | project\_id | GCP Project ID for our side of the peering connection | `string` | 
-| peer\_network\_name | Name of the network this set of firewall rules applies to | `string` |
+| peer\_network\_name | Name of the network on the peer side of the peering connection | `string` |
 
 ### Recommend Inputs
 
 | Name | Description | Type |
 |------|-------------|------|
 | peer\_project\_id | GCP Project ID for peer of the peering connection | `string` | `var.project_id` | 
-| our\_network\_name | Name of the network this set of firewall rules applies to | `string` | "default" |
+| our\_network\_name | Name of the network on our side of the peering connection | `string` | "default" |
 
 ### Optional Inputs
 
@@ -26,10 +26,12 @@
 |------|-----------------------------------------------------------------------------------|------|---------|
 | import_custom_routes | Whether to import static and dynamic routes from the peer network | `bool` | false |
 | export_custom_routes | Whether to export static and dynamic routes to the peer network   | `bool` | false |
+| enabled | Whether to actually create the peering connection | `bool` | true |
 
 #### Notes
 
-- If `peer_projet_id` is not specified, the peer network is assumed to be in var.project_id
+- If `peer_project_id` is not specified, the peer network is assumed to be in `project_id`
+- If both networks are in `project_id`, the peer side will be automatically brought up
 
 ## Outputs
 
